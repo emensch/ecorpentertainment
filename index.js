@@ -15,6 +15,12 @@ db.connect('database/app.db', function (err) {
 var Artist = require('./models/artist');
 var Employee = require('./models/employee');
 
+app.get('/', function (req, res) {
+	Artist.findAll( function (err, artists) {
+		res.json(artists);
+	});
+});
+
 var server = app.listen(3000, function () {
 	var port = server.address().port;
 	console.log('Listening on port %s...', port);
