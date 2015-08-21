@@ -24,3 +24,15 @@ module.exports.findAll = function (cb) {
 		cb(null, rows);
 	});
 };
+
+module.exports.create = function (cb, body) {
+
+};
+
+module.exports.update = function (cb, body) {
+
+};
+
+module.exports.delete = function (cb, body) {
+
+};
