@@ -14,23 +14,7 @@ db.connect('database/app.db', function (err) {
 	}
 });
 
-var Artist = require('./models/artist');
-var Employee = require('./models/employee');
-
-app.get('/', function (req, res) {
-	Artist.findAll( function (err, artists) {
-		res.json(artists);
-	});
-});
-
-app.get('/admin', function (req, res) {
-	res.render('admin.jade')
-});
-
-app.post('/admin', function (req, res) {
-	console.log(req.body);
-	res.sendStatus(200);
-});
+app.use(require('./controllers'));
 
 var server = app.listen(3000, function () {
 	var port = server.address().port;
