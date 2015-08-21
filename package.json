@@ -28,7 +28,9 @@
     "gulp-util": "^3.0.6"
   },
   "dependencies": {
+    "body-parser": "^1.13.3",
     "express": "^4.13.3",
+    "jade": "^1.11.0",
     "sqlite3": "^3.0.10"
   }
 }
