@@ -1,20 +1,22 @@
 div
-  form(action='/admin',method='post')
-    div(data-role='fieldcontain')
-      fieldset(data-role='controlgroup')
-        label(for='email') email
-            input(id='email',type='text',value='',placeholder='@',name='email')
-    div#passworddiv(data-role='fieldcontain')
-      fieldset(data-role='controlgroup')
-        label(for='password') password
-           input(id='password',type='password',value='',placeholder='',name='password')
-    div(id='hiddendiv',data-role='fieldcontain')
-      fieldset(data-role='controlgroup')
-        label(for='hidden_password') password
-           input(id='hidden_password',type='text',value='',placeholder='',name='password2')
-    div(data-role='fieldcontain')
-      fieldset(data-type='vertical', data-role='controlgroup')                                           
-       label(for='showpass') show password
-       input(id='showpass',type='checkbox')
-    div(data-role='fieldcontain')   
-      input(type='submit',value='Sign Up',data-transition='fade', data-theme='c')
+  form(action='/admin', method='post')
+    div
+      input(type='text', placeholder='name', name='name')
+    div
+      input(type='text', placeholder='logo', name='logo')
+    div
+      input(type='text', placeholder='description', name='description')
+    div
+      input(type='text', placeholder='soundcloud', name='soundcloud')
+    div
+      input(type='text', placeholder='facebook', name='facebook')
+    div
+      input(type='text', placeholder='twitter', name='twitter')
+    div
+      input(type='text', placeholder='instagram', name='instagram')
+    div
+      input(type='text', placeholder='youtube', name='youtube')
+    div
+      input(type='text', placeholder='website', name='website') 
+    div
+      input(type='submit', value='Submit')
