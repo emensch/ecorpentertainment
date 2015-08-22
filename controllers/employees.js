@@ -5,14 +5,18 @@ var express = require('express'),
 router.get('/new', function (req, res) {
 	res.render('manage_employee.jade', {
 		method: 'POST',
-		title: 'New employee'
+		title: 'New employee',
+		employee: {}
 	});
 });
 
 router.get('/edit/:id', function (req, res) {
-	res.render('manage_employee.jade', {
-		method: 'PUT',
-		title: 'New employee'
+	Employee.findById(req.params.id, function (err, employee) {
+		res.render('manage_employee.jade', {
+			method: 'PUT',
+			title: 'Edit employee',
+			employee: employee
+		});
 	});
 });
 

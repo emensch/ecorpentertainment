@@ -3,10 +3,10 @@ p= method
 div
   form(action='/admin_method='+method, method='post')
     div
-      input(type='text', placeholder='name', name='name')
+      input(type='text', placeholder='name', name='name', value=employee.name)
     div
-      input(type='text', placeholder='position', name='position')
+      input(type='text', placeholder='position', name='position', value=employee.position)
     div
-      input(type='text', placeholder='bio', name='bio')
+      input(type='text', placeholder='bio', name='bio', value=employee.bio)
     div
       input(type='submit', value='Submit')

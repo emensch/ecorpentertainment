@@ -5,14 +5,18 @@ var express = require('express'),
 router.get('/new', function (req, res) {
 	res.render('manage_artist.jade', {
 		method: 'POST',
-		title: 'New artist'
+		title: 'New artist',
+		artist: {}
 	});
 });
 
 router.get('/edit/:id', function (req, res) {
-	res.render('manage_artist.jade', {
-		method: 'PUT',
-		title: 'Edit artist'
+	Artist.findById(req.params.id, function (err, artist) {
+		res.render('manage_artist.jade', {
+			method: 'PUT',
+			title: 'Edit artist',
+			artist: artist
+		});
 	});
 });
 

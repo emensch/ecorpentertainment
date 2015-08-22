@@ -3,22 +3,22 @@ p= method
 div
   form(action='/admin?_method='+method, method='post')
     div
-      input(type='text', placeholder='name', name='name')
+      input(type='text', placeholder='name', name='name', value=artist.name)
     div
-      input(type='text', placeholder='logo', name='logo')
+      input(type='text', placeholder='logo', name='logo', value=artist.logo)
     div
-      input(type='text', placeholder='description', name='description')
+      input(type='text', placeholder='description', name='description', value=artist.description)
     div
-      input(type='text', placeholder='soundcloud', name='soundcloud')
+      input(type='text', placeholder='soundcloud', name='soundcloud', value=artist.soundcloud)
     div
-      input(type='text', placeholder='facebook', name='facebook')
+      input(type='text', placeholder='facebook', name='facebook', value=artist.facebook)
     div
-      input(type='text', placeholder='twitter', name='twitter')
+      input(type='text', placeholder='twitter', name='twitter', value=artist.twitter)
     div
-      input(type='text', placeholder='instagram', name='instagram')
+      input(type='text', placeholder='instagram', name='instagram', value=artist.instagram)
     div
-      input(type='text', placeholder='youtube', name='youtube')
+      input(type='text', placeholder='youtube', name='youtube', value=artist.youtube)
     div
-      input(type='text', placeholder='website', name='website') 
+      input(type='text', placeholder='website', name='website', value=artist.website) 
     div
       input(type='submit', value='Submit')
