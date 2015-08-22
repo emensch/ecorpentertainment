@@ -15,6 +15,18 @@ var createstr = String.prototype.concat(
 
 db.run('CREATE TABLE IF NOT EXISTS artists ('+createstr+')');
 
+module.exports.findById = function(id, cb) {
+	db.get('SELECT * FROM artists WHERE ID = $id', {
+		$id: id
+	}, function (err, row) {
+		if (err) {
+			return cb(err);
+		}
+
+		cb(null, row);
+	});
+}
+
 module.exports.findAll = function (cb) {
 	db.all('SELECT * FROM artists', function (err, rows) {
 		if (err) {
