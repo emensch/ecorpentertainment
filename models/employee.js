@@ -3,7 +3,8 @@ var db = require('../db').get();
 var createstr = String.prototype.concat(
 	'ID INTEGER PRIMARY KEY AUTOINCREMENT, ',
 	'name TEXT NOT NULL, ',
-	'photo TEXT NOT NULL '
+	'position TEXT NOT NULL, ',
+	'bio TEXT NOT NULL'
 );
 
 db.run('CREATE TABLE IF NOT EXISTS employees ('+createstr+')');
