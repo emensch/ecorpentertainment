@@ -50,6 +50,12 @@ router.post('/admin', function (req, res) {
 	res.sendStatus(200);
 });
 
+router.put('/admin', function (req, res) {
+	console.log('put');
+	console.log(req.body);
+	res.sendStatus(200);
+});
+
 router.use('/artists', require('./artists'));
 router.use('/employees', require('./employees'));
 

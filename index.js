@@ -1,11 +1,13 @@
 var express = require('express'),
 	bodyParser = require('body-parser'),
+	methodOverride = require('method-override'),
 	db = require('./db');
 
 var app = express();
 
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded( { extended: false } ));
+app.use(methodOverride('_method'));
 
 // Must open database connection before requiring models
 db.connect('database/app.db', function (err) {
