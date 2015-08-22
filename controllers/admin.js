@@ -1,8 +1,18 @@
 var express = require('express'),
 	router = express.Router();
 
+var Artist = require('../models/artist');
+var Employee = require('../models/employee');
+
 router.get('/', function (req, res) {
-	res.render('admin.jade');
+	Artist.findAll( function (err, artists) {
+		Employee.findAll( function (err, employees) {
+			res.render('admin.jade', {
+				artists: artists,
+				employees: employees
+			});
+		});
+	});
 });
 
 router.post('/', function (req, res) {

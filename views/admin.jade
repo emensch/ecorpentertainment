@@ -1,4 +1,13 @@
-a(href='admin/newartist')
+p Artists
+ul
+  each artist in artists
+    li= artist.name
+p Employees
+ul
+  each employee in employees
+    li= employee.name
+
+a(href='admin/artists/new')
   Button New artist
-a(href='admin/newemployee')
+a(href='admin/employee/new')
   Button New employee
