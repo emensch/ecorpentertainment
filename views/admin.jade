@@ -2,10 +2,18 @@ p Artists
 ul
   each artist in artists
     li= artist.name
+      a(href='/admin/artists/edit/'+artist.ID)
+        button Edit
+      form(action='/admin/artists/'+artist.ID+'?_method=DELETE', method='post')
+        input(type='submit', value='Delete')
 p Employees
 ul
   each employee in employees
     li= employee.name
+      a(href='/admin/employees/edit/'+employee.ID)
+        button Edit
+      form(action='/admin/employees/'+employee.ID+'?_method=DELETE', method='post')
+        input(type='submit', value='Delete')
 
 a(href='admin/artists/new')
   Button New artist

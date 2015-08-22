@@ -9,7 +9,7 @@ router.get('/new', function (req, res) {
 	});
 });
 
-router.get('/edit', function (req, res) {
+router.get('/edit/:id', function (req, res) {
 	res.render('manage_employee.jade', {
 		method: 'PUT',
 		title: 'New employee'
