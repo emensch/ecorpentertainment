@@ -16,4 +16,19 @@ router.get('/edit', function (req, res) {
 	});
 });
 
+router.post('/', function (req, res) {
+	console.log('post employees');
+	res.sendStatus(200);
+});
+
+router.put('/:id', function (req, res) {
+	console.log('put employees', req.params.id);
+	res.sendStatus(200);
+});
+
+router.delete('/:id', function (req, res) {
+	console.log('delete employees', req.params.id);
+	res.sendStatus(200);
+});
+
 module.exports = router;
