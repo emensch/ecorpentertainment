@@ -1,7 +1,12 @@
 var express = require('express'),
 	bodyParser = require('body-parser'),
 	methodOverride = require('method-override'),
-	db = require('./db');
+	Sequelize = require('sequelize');
+
+var sequelize = new Sequelize(null, null, null, {
+	dialect: 'sqlite',
+	storage: './database/app.db'
+});
 
 var app = express();
 
@@ -9,14 +14,7 @@ app.use(express.static('public'));
 app.use(bodyParser.urlencoded( { extended: false } ));
 app.use(methodOverride('_method'));
 
-// Must open database connection before requiring models
-db.connect('database/app.db', function (err) {
-	if (err) {
-		return console.log(err);
-	}
-});
-
-app.use(require('./controllers'));
+//app.use(require('./controllers'));
 
 var server = app.listen(3000, function () {
 	var port = server.address().port;
