@@ -1,0 +1,1 @@
+process.env['DB_FILE'] = './database/app.db'

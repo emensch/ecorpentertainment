@@ -1,11 +1,12 @@
 var express = require('express'),
+	env = require('./env.js'),
 	bodyParser = require('body-parser'),
 	methodOverride = require('method-override'),
 	Sequelize = require('sequelize');
 
 var sequelize = new Sequelize(null, null, null, {
 	dialect: 'sqlite',
-	storage: './database/app.db'
+	storage: process.env.DB_FILE
 });
 
 var app = express();
