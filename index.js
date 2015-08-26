@@ -7,10 +7,10 @@ var express = require('express'),
 var app = express();
 
 app.use(express.static('public'));
-app.use(bodyParser.urlencoded( { extended: false } ));
+app.use(bodyParser.urlencoded( { extended: true } ));
 app.use(methodOverride('_method'));
 
-//app.use(require('./controllers'));
+app.use(require('./controllers'));
 
 models.sequelize.sync().then(function () {
 	var server = app.listen(3000, function () {
