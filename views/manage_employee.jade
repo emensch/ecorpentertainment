@@ -1,7 +1,7 @@
 p= title
 p= method
 div
-  form(action='/admin/employees_method='+method, method='post')
+  form(action='/admin/employees/'+(employee.id || '') +'?_method='+method, method='post')
     div
       input(type='text', placeholder='name', name='name', value=employee.name)
     div
