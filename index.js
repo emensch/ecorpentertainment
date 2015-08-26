@@ -2,12 +2,7 @@ var express = require('express'),
 	env = require('./env.js'),
 	bodyParser = require('body-parser'),
 	methodOverride = require('method-override'),
-	Sequelize = require('sequelize');
-
-var sequelize = new Sequelize(null, null, null, {
-	dialect: 'sqlite',
-	storage: process.env.DB_FILE
-});
+	models = require('./models');
 
 var app = express();
 
@@ -17,7 +12,10 @@ app.use(methodOverride('_method'));
 
 //app.use(require('./controllers'));
 
-var server = app.listen(3000, function () {
-	var port = server.address().port;
-	console.log('Listening on port %s...', port);
+models.sequelize.sync().then(function () {
+	var server = app.listen(3000, function () {
+		var port = server.address().port;
+		console.log('Listening on port %s...', port);
+	});
 });
+
