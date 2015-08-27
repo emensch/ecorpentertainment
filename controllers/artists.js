@@ -27,7 +27,6 @@ router.get('/edit/:id', function (req, res) {
 		console.log(err);
 		console.sendStatus(500);
 	}
-
 });
 
 router.post('/', function (req, res) {
@@ -117,8 +116,6 @@ router.delete('/:id', function (req, res) {
 		console.log(err);
 		res.sendStatus(500);
 	}
-
-
 });
 
 module.exports = router;
