@@ -31,3 +31,6 @@ database
 
 # Env 
 env.js
+
+# Bower components
+bower_components
