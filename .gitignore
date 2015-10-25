@@ -34,3 +34,8 @@ env.js
 
 # Bower components
 bower_components
+
+# Files in public folders
+public/*.*
+public/js/*.*
+public/css/*.*
