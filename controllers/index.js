@@ -5,10 +5,14 @@ var express = require('express'),
 
 router.use(bodyParser.urlencoded( { extended: false } ));
 
+// router.get('/', function (req, res) {
+// 	models.Artist.findAll().then(function (artists) {
+// 		res.json(artists);
+// 	});
+// });
+
 router.get('/', function (req, res) {
-	models.Artist.findAll().then(function (artists) {
-		res.json(artists);
-	});
+	res.render('index.jade');
 });
 
 router.use('/admin', require('./admin'));
