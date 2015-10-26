@@ -1,10 +1,11 @@
 @import 'bower_components/normalize-scss/_normalize';
 @import 'bower_components/susy/sass/susy';
+@import 'variables';
 
 @import url(https://fonts.googleapis.com/css?family=Montserrat|Raleway);
 
 body {
-	background-color: #E6E6E6;
+	background-color: $dark-grey;
 	font-family: 'Raleway', sans-serif;
 }
 
@@ -13,7 +14,7 @@ body {
 	height: 100vh;
 	position: relative;
 
-	background-color: #191919;
+	background-color: $dark;
 	color: #FFFFFF;
 	vertical-align: middle;
 
@@ -25,7 +26,7 @@ body {
 	left: -100px;
 	width: 300px;
 	height: 60px;
-	background-color: #3D003D;
+	background-color: $purple;
 	transform: rotate(-45deg);
 }
 
@@ -34,7 +35,7 @@ body {
 	left: -120px;
 	width: 550px;
 	height: 80px;
-	background-color: #3D003D;
+	background-color: $purple;
 	transform: rotate(-45deg);	
 }
 
@@ -61,14 +62,14 @@ body {
 
 .artist {
 	height: 300px;
-	background-color: #E6E6E6;
+	background-color: $dark-grey;
 
 	&:nth-child(2n) {
-		background-color: #F2F2F2;
+		background-color: $light-grey;
 	}
 }
 
 .footer {
-	background-color: #191919;
+	background-color: $dark;
 	height: 100px;
 }
