@@ -1,8 +1,19 @@
 @import 'bower_components/normalize-scss/_normalize';
 @import 'bower_components/susy/sass/susy';
 @import 'variables';
+@import 'animations';
 
 @import url(https://fonts.googleapis.com/css?family=Montserrat|Raleway);
+
+$susy: (
+	columns: 12,
+	container: 960px,
+	gutters: 1/4,
+	gutter-position: inside,
+	global-box-sizing: border-box,
+);
+
+@include border-box-sizing;
 
 body {
 	background-color: $dark-grey;
@@ -44,6 +55,8 @@ body {
 	font-family: 'Montserrat', sans-serif;
 	margin: auto;
 	z-index: 10;
+
+	@extend .fadein;
 }
 
 .ecorp {
@@ -56,21 +69,42 @@ body {
 	letter-spacing: 6px;
 }
 
-.artist-container {
-
-}
-
 .artist {
-	height: 300px;
 	background-color: $dark-grey;
+	padding-top: 20px;
+	padding-bottom: 20px;
 
 	&:nth-child(2n) {
 		background-color: $light-grey;
 	}
 }
 
+.artist-info-container {
+	@include container;
+	display: flex;
+	align-items: center;
+}
+
+.img {
+	@include span(5);
+
+	img {
+		height: auto;
+		width: 100%;
+	}
+}
+
+.name {
+	@include span(7);
+	color: #000000;
+	text-align: center;
+	font-size: 72px;
+	letter-spacing: 2px;
+}
+
 .footer {
 	background-color: $dark;
+	font-family: 'Montserrat', sans-serif;
 	text-align: center;
 	padding-top: 20px;
 	padding-bottom: 20px;
