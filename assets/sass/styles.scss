@@ -11,19 +11,38 @@ body {
 .landing {
 	width: 100vw;
 	height: 100vh;
+	position: relative;
 
 	background-color: #191919;
 	color: #FFFFFF;
 	vertical-align: middle;
 
 	display: flex;
-	justify-content: center;
-	align-items: center;
+}
+
+.pizazz1 {
+	position: absolute;
+	left: -100px;
+	width: 300px;
+	height: 60px;
+	background-color: #3D003D;
+	transform: rotate(-45deg);
+}
+
+.pizazz2 {
+	position: absolute;
+	left: -120px;
+	width: 550px;
+	height: 80px;
+	background-color: #3D003D;
+	transform: rotate(-45deg);	
 }
 
 .title-container {
 	text-align: center;
 	font-family: 'Montserrat', sans-serif;
+	margin: auto;
+	z-index: 10;
 }
 
 .ecorp {
