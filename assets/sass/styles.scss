@@ -25,6 +25,7 @@ body {
 	width: 100vw;
 	height: 100vh;
 	position: relative;
+	overflow: hidden;
 
 	background-color: $dark;
 	vertical-align: middle;
@@ -50,6 +51,16 @@ body {
 	transform: rotate(-45deg);	
 }
 
+.pizazz3 {
+	position: absolute;
+	bottom: 0;
+	right: -70px;
+	width: 200px;
+	height: 60px;
+	background-color: $purple;
+	transform: rotate(-45deg);
+}
+
 .title-container {
 	text-align: center;
 	font-family: 'Montserrat', sans-serif;
@@ -67,6 +78,11 @@ body {
 .entertainment {
 	font-size: 24px;
 	letter-spacing: 6px;
+}
+
+.artists-container {
+	position: relative;
+	overflow: hidden;
 }
 
 .artist {
