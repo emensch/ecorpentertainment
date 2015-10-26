@@ -7,6 +7,7 @@
 body {
 	background-color: $dark-grey;
 	font-family: 'Raleway', sans-serif;
+	color: #FFFFFF;
 }
 
 .landing {
@@ -15,7 +16,6 @@ body {
 	position: relative;
 
 	background-color: $dark;
-	color: #FFFFFF;
 	vertical-align: middle;
 
 	display: flex;
@@ -71,5 +71,12 @@ body {
 
 .footer {
 	background-color: $dark;
-	height: 100px;
+	text-align: center;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.copyright {
+	display: inline-block;
+	font-size: 12px;
 }
