@@ -1,2 +1,55 @@
 @import 'bower_components/normalize-scss/_normalize';
 @import 'bower_components/susy/sass/susy';
+
+@import url(https://fonts.googleapis.com/css?family=Montserrat|Raleway);
+
+body {
+	background-color: #E6E6E6;
+	font-family: 'Raleway', sans-serif;
+}
+
+.landing {
+	width: 100vw;
+	height: 100vh;
+
+	background-color: #191919;
+	color: #FFFFFF;
+	vertical-align: middle;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.title-container {
+	text-align: center;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.ecorp {
+	font-size: 124px;
+	letter-spacing: 6px;
+}
+
+.entertainment {
+	font-size: 24px;
+	letter-spacing: 6px;
+}
+
+.artist-container {
+
+}
+
+.artist {
+	height: 300px;
+	background-color: #E6E6E6;
+
+	&:nth-child(2n) {
+		background-color: #F2F2F2;
+	}
+}
+
+.footer {
+	background-color: #191919;
+	height: 100px;
+}
