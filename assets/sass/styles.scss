@@ -87,20 +87,16 @@ body {
 	a {
 		display: block;
 		text-decoration: none;
-
-		.name {
-			.text {
-				border-bottom: 5px solid transparent;
-				transition: border-bottom-color 0.3s ease;
-			}
-		}
+		color: #000000;
 
 		&:hover {
 			.name {
-				.text {
-					border-bottom: 5px solid $purple;
-				}
+				color: #737373;	
 			}
+		}
+
+		.name {
+			transition: color 0.3s ease;
 		}
 	}
 }
