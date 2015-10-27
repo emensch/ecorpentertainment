@@ -3,7 +3,7 @@
 @import 'variables';
 @import 'animations';
 
-@import url(https://fonts.googleapis.com/css?family=Montserrat|Oswald:700);
+@import url(https://fonts.googleapis.com/css?family=Montserrat|Raleway);
 
 $susy: (
 	columns: 12,
@@ -17,7 +17,7 @@ $susy: (
 
 body {
 	background-color: $dark-grey;
-	font-family: 'Oswald', sans-serif;
+	font-family: 'Raleway', sans-serif;
 	color: #FFFFFF;
 }
 
@@ -90,7 +90,7 @@ body {
 
 		.name {
 			.text {
-				border-bottom: 8px solid transparent;
+				border-bottom: 5px solid transparent;
 				transition: border-bottom-color 0.3s ease;
 			}
 		}
@@ -98,7 +98,7 @@ body {
 		&:hover {
 			.name {
 				.text {
-					border-bottom: 8px solid $purple;
+					border-bottom: 5px solid $purple;
 				}
 			}
 		}
