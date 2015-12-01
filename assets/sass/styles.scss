@@ -1,148 +1,263 @@
-@import 'bower_components/normalize-scss/_normalize';
-@import 'bower_components/susy/sass/susy';
-@import 'variables';
-@import 'animations';
+@import 'bower_components/normalize-scss/normalize';
+@import 'fullpage';
 
 @import url(https://fonts.googleapis.com/css?family=Montserrat|Raleway);
 
-$susy: (
-	columns: 12,
-	container: 960px,
-	gutters: 1/4,
-	gutter-position: inside,
-	global-box-sizing: border-box,
-);
-
-@include border-box-sizing;
+$purple: #8520c5;
 
 body {
-	background-color: $dark-grey;
-	font-family: 'Raleway', sans-serif;
 	color: #FFFFFF;
+	background-color: #191919;
+	font-family: 'Montserrat', sans-serif;
 }
 
-.landing {
-	width: 100vw;
-	height: 100vh;
-	position: relative;
-	overflow: hidden;
-
-	background-color: $dark;
-	vertical-align: middle;
-
-	display: flex;
+a {
+	color: inherit;
+	text-decoration: none;	
 }
 
-.pizazz1 {
-	position: absolute;
-	left: -100px;
-	width: 300px;
-	height: 60px;
-	background-color: $purple;
-	transform: rotate(-45deg);
+*, *::after, *::before {
+	box-sizing: border-box;
 }
 
-.pizazz2 {
-	position: absolute;
-	left: -120px;
-	width: 550px;
-	height: 80px;
-	background-color: $purple;
-	transform: rotate(-45deg);	
-}
+.navigation {
+	position: fixed;
+	z-index: 10;
+	width: 100%;
+	text-align: center;
+	top: 70%;
+	font-size: 16px;
+	transform: scale(1.2);
 
-.pizazz3 {
-	position: absolute;
-	bottom: 0;
-	right: -70px;
-	width: 200px;
-	height: 60px;
-	background-color: $purple;
-	transform: rotate(-45deg);
+	ul {
+		list-style: none;
+		margin: 0;
+		padding: 0 15px;
+		line-height: 2.5em;
+		letter-spacing: 1px;
+		background-color: #000000;
+		background-color: rgba(0,0,0,0);
+
+		transition: all 0.3s ease;
+
+		li {
+			padding: 0 6px;
+			display: inline-block;
+
+			&.active {
+				a {
+					color: $purple;
+				}
+			}
+
+			a {
+				&:hover {
+					color: $purple;
+				}
+				transition: color 0.3s ease;
+			}	
+		}
+
+		.separator {
+			display: inline-block;
+			padding: 0;
+			margin: 0 8px;
+			cursor: default;
+		}
+	}
+
+	&.scrolled {
+		transform: scale(1.0);
+		top: 0;
+
+		ul {
+			background-color: rgba(0,0,0,0.5);
+		}
+	}
+
+	transition: transform 0.3s ease, top 0.65s ease;
+	animation: fadein 2s ease;
 }
 
 .title-container {
-	text-align: center;
-	font-family: 'Montserrat', sans-serif;
-	margin: auto;
-	z-index: 10;
-
-	@extend .fadein;
-}
-
-.ecorp {
-	font-size: 124px;
-	letter-spacing: 6px;
-}
-
-.entertainment {
-	font-size: 24px;
-	letter-spacing: 6px;
-}
-
-.artists-container {
-	position: relative;
-	overflow: hidden;
-
-	a {
-		display: block;
-		text-decoration: none;
-		color: #000000;
-
-		&:hover {
-			.name {
-				color: #737373;	
-			}
-		}
-
-		.name {
-			transition: color 0.3s ease;
-		}
-	}
-}
-
-.artist {
-	background-color: $dark-grey;
-	padding-top: 20px;
-	padding-bottom: 20px;
-
-	&:nth-child(2n) {
-		background-color: $light-grey;
-	}
-}
-
-.artist-info-container {
-	@include container;
-	display: flex;
-	align-items: center;
-}
-
-.img {
-	@include span(5);
+	position: absolute;
+	width: 100%;
+	top: 25%;
 
 	img {
+		display: block;
+		margin: auto;
+		width: 700px;
 		height: auto;
-		width: 100%;
+	}
+
+	animation: fadein 2s ease;
+}
+
+.arrow-down {
+	position: absolute;
+	width: 100%;
+	bottom: 0;
+	text-align: center;
+	font-size: 48px;
+	margin-bottom: 20px;
+	color: #626262;
+}
+
+.artist-bg {
+	height: 100%;
+	background-size: cover;
+}
+
+.column {
+	width: 400px;
+	height: 100%;
+	padding: 80px 20px 20px;
+}
+
+.right {
+	float: right;
+}
+
+.artist-name {
+	text-align: center;
+	width: 100%;
+	background-color: rgba(0,0,0,0.5);
+	font-size: 28px;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	line-height: 1.8em;
+	padding: 8px;
+	margin-bottom: 15px;
+}
+
+.artist-bio {
+	width: 100%;
+	background-color: rgba(0,0,0,0.5);
+	font-size: 14px;
+	letter-spacing: 1px;
+	line-height: 1.6em;
+	padding: 8px;
+	margin-bottom: 15px;
+	font-family: 'Raleway', sans-serif;
+}
+
+.social-links {
+	list-style: none;
+	margin: 0 0 15px;
+	padding: 0 10px;
+	text-align: center;
+	font-size: 24px;
+
+	li {
+		display: inline-block;
+		margin: 5px;
+
+		a {
+			display: inline-block;
+			width: 2em;
+			line-height: 2em;
+			background-color: rgba(0,0,0,0.5);
+			color: #E4E4E4;
+
+			&:hover {
+				background-color: rgba(0,0,0,1);
+				color: $purple;
+			}
+
+			transition: all 0.3s ease;
+		}
 	}
 }
 
-.name {
-	@include span(7);
-	color: #000000;
+.contact {
 	text-align: center;
-	font-size: 72px;
-	letter-spacing: 2px;
+
+	.header {
+		font-size: 22px;
+		letter-spacing: 4px;
+	}
+
+	form {
+		width: 400px;
+		text-align: left;
+		margin: auto;
+
+		input, textarea {
+			display: inline-block;
+			background: none;
+			border: 1px solid #777777;
+			border-radius: 3px;
+			margin: 0;
+			width: 100%;
+			display: block;
+			margin: 5px 0 0;
+			padding: 4px;
+			color: #FFFFFF;
+			font-family: 'Raleway', sans-serif;
+
+			&:focus {
+				outline: none;
+				background-color: #777777;
+			}
+
+			transition: background-color 0.2s ease;
+		}
+
+		input {
+			line-height: 1.5em;
+		}
+
+		label {
+			display: block;
+			font-size: 14px;
+			color: #A5A5A5;
+		}
+
+		textarea {
+			height: 8em;
+			resize: vertical;
+			overflow: auto;
+		}
+
+		button {
+			width: 100%;
+			background: none;
+			margin: 5px 0 0;
+			border: 1px solid #777777;
+			border-radius: 3px;
+			color: #A5A5A5;
+			padding: 4px;
+
+			&:hover {
+				background-color: #777777;
+				color: #FFFFFF;
+			}
+
+			&:focus {
+				outline: none;
+			}
+
+			transition: all 0.3s ease;
+		}
+
+		.field {
+			padding: 10px 0;
+		}
+	}
 }
 
 .footer {
-	background-color: $dark;
-	font-family: 'Montserrat', sans-serif;
-	text-align: center;
-	padding-top: 20px;
+	position: absolute;
+	width: 100%;
+	bottom: 0;
 	padding-bottom: 20px;
+	text-align: center;
+	font-size: 12px;
+	color: #DDDDDD;
 }
 
-.copyright {
-	display: inline-block;
-	font-size: 12px;
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
 }
