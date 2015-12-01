@@ -5,6 +5,7 @@ var gulp = require('gulp'),
 	uglify = require('gulp-uglify'),
 	rename = require('gulp-rename'),
 	concat = require('gulp-concat'),
+	imagemin = require('gulp-imagemin'),
 	gutil = require('gulp-util'),
 	del = require('del');
 
@@ -27,17 +28,25 @@ gulp.task('scripts', function () {
 		.pipe(gulp.dest('public/js'));
 });
 
+gulp.task('images', function() {
+	gulp.src('assets/img/*')
+		.pipe(imagemin())
+		.pipe(gulp.dest('public/img'));
+});
+
 gulp.task('watch', function () {
 	gulp.watch('assets/sass/*.scss', ['styles']);
 	gulp.watch('assets/js/*.js', ['scripts']);
+	gulp.watch('assets/img/*', ['images']);
 });
 
 gulp.task('clean', function (cb) {
 	del([
 			'public/js/*', 
 			'public/css/*', 
+			'public/img/*',
 			'public/*', 
 		], cb);
 });
 
-gulp.task('default', ['styles', 'scripts']);
+gulp.task('default', ['styles', 'scripts', 'images']);
