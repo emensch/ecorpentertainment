@@ -29,7 +29,7 @@ gulp.task('scripts', function () {
 });
 
 gulp.task('images', function() {
-	gulp.src('assets/img/*')
+	gulp.src('assets/img/**')
 		.pipe(imagemin())
 		.pipe(gulp.dest('public/img'));
 });
