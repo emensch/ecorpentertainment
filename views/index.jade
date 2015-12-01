@@ -1,29 +1,92 @@
 doctype html
-html(lang='en' ng-app='bsj')
+html(lang='en', ng-app='bsj')
   head
     meta(charset='utf-8')
     meta(name='viewport', content='width=device-width, initial-scale=1')
     title ECorp Management
-    link(href='css/styles.min.css', rel='stylesheet') 
+    link(href='https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css', rel='stylesheet')
+    link(href='css/styles.min.css', rel='stylesheet')
+    script(src='http://code.jquery.com/jquery-2.1.4.min.js')
+    script(src='js/site.js')
   body
-    .landing
-      .pizazz1
-      .pizazz2
-      .title-container
-        .ecorp ECORP
-        .entertainment MANAGEMENT
-    .artists-container
-      a(href='/artists/argenil').artist
-        .artist-info-container
-          .img
-            img(src='img/argenil.png')
-          .name Argenil 
-      a(href='/artists/blume').artist
-        .artist-info-container
-          .name Michael Blume
-          .img
-            img(src='img/blume.png')
-      .pizazz3
-    .footer
-      .copyright © 2015 ECorp Management
-
+    #nav.navigation
+      ul#menu
+        li(data-menuanchor='argenil')
+          a(href='#argenil')  Argenil 
+        li(data-menuanchor='michaelblume')
+          a(href='#michaelblume')  Michael Blume 
+        li.separator |
+        li(data-menuanchor='contact')
+          a(href='#contact')  Contact 
+    #fullpage
+      .section(data-anchor='')
+        .title-container
+          img(src='img/logo.png')
+        .arrow-down
+          i.fa.fa-chevron-down
+      .section(data-anchor='argenil')
+        .artist-bg(style="background-image: url('img/artists/argenil.jpg')")
+          .artist-content
+            .column
+              .artist-name  Argenil 
+              .artist-bio
+                | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed laoreet consectetur ante et auctor. Cras fringilla imperdiet metus, vel interdum tellus facilisis id. Cras est orci, ultricies et consectetur ac, gravida ac ex. Quisque nec consequat eros. Morbi sem orci, placerat at mattis sed, egestas non erat.
+              ul.social-links
+                li
+                  a(href='')
+                    i.fa.fa-soundcloud
+                li
+                  a(href='')
+                    i.fa.fa-facebook
+                li
+                  a(href='')
+                    i.fa.fa-twitter
+                li
+                  a(href='')
+                    i.fa.fa-instagram
+                li
+                  a(href='')
+                    i.fa.fa-youtube
+      .section(data-anchor='michaelblume')
+        .artist-bg(style="background-image: url('img/artists/blume.jpg')")
+          .artist-content
+            .column.right
+              .artist-name  Michael Blume 
+              .artist-bio
+                | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed laoreet consectetur ante et auctor. Cras fringilla imperdiet metus, vel interdum tellus facilisis id. Cras est orci, ultricies et consectetur ac, gravida ac ex. Quisque nec consequat eros. Morbi sem orci, placerat at mattis sed, egestas non erat.
+              ul.social-links
+                li
+                  a(href='')
+                    i.fa.fa-soundcloud
+                li
+                  a(href='')
+                    i.fa.fa-facebook
+                li
+                  a(href='')
+                    i.fa.fa-twitter
+                li
+                  a(href='')
+                    i.fa.fa-instagram
+                li
+                  a(href='')
+                    i.fa.fa-youtube
+              iframe.artist-video(type='text/html', width='360', height='220', src='https://www.youtube.com/embed/EwTZ2xpQwpA', frameborder='0', allowfullscreen='')
+      .section
+        .contact(data-anchor='contact')
+          .header  CONTACT 
+          form
+            .field
+              label
+                | Email
+                input(type='email', name='email')
+            .field
+              label
+                | Subject
+                input(type='text', name='subject')
+            .field
+              label
+                | Message
+                textarea#messagetext(name='message')
+            button#send(type='button')  Send 
+        .footer
+          | © 2015 ECorp Management
