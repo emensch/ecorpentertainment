@@ -5,7 +5,9 @@
         $('#fullpage').fullpage({
             menu: '#menu',
             onLeave: onLeave,
-            afterLoad: afterLoad
+            afterLoad: afterLoad,
+            fitToSectionDelay: 100,
+            normalScrollElements: '#messagetext'
         });
 
         $('#messagetext').focus(function() {
