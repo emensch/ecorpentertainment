@@ -15,14 +15,6 @@ router.get('/', function (req, res) {
 	res.render('index.jade');
 });
 
-router.get('/artists/argenil', function (req, res) {
-	res.render('artist-argenil.jade');
-});
-
-router.get('/artists/blume', function (req, res) {
-	res.render('artist-blume.jade')
-});
-
 router.use('/admin', require('./admin'));
 
 module.exports = router;
