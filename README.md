@@ -1,5 +1,5 @@
 # ecorpentertainment
 
-The website for [ECorp Entertainment](http://ecorpentertainment.com).
+This repo now exists only as a testament to lessons learned.
 
-WIP!
+Please visit [ecorpmanagement](https://github.com/emensch/ecorpmanagement) for the real, better code.
